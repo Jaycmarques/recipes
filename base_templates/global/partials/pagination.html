@@ -1,0 +1,35 @@
+{% if recipes.has_other_pages %}
+<nav role="navigation" aria-label="Main Pagination" class="container">
+    <ul class="pagination justify-content-center"> <!-- Alinhando a paginação ao centro -->
+        {% if pagination_range.first_page_out_of_range %}
+            <li class="page-item">
+                <a class="page-link" aria-label="Go to page 1" href="?page=1{{ additional_url_query }}">1</a>
+            </li>
+            <li class="page-item disabled">
+                <span class="page-link">...</span> <!-- Pontos de reticência -->
+            </li>
+        {% endif %}
+
+        {% for page in pagination_range.pagination %}
+            {% if pagination_range.current_page == page %}
+                <li class="page-item active" aria-current="page">
+                    <span class="page-link">{{ page }}</span> <!-- Página atual -->
+                </li>
+            {% else %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page }}{{ additional_url_query }}" aria-label="Go to page {{ page }}">{{ page }}</a>
+                </li>
+            {% endif %}
+        {% endfor %}
+
+        {% if pagination_range.last_page_out_of_range %}
+            <li class="page-item disabled">
+                <span class="page-link">...</span> <!-- Pontos de reticência -->
+            </li>
+            <li class="page-item">
+                <a class="page-link" aria-label="Go to page {{ pagination_range.total_pages }}" href="?page={{ pagination_range.total_pages }}{{ additional_url_query }}">{{ pagination_range.total_pages }}</a>
+            </li>
+        {% endif %}
+    </ul>
+</nav>
+{% endif %}

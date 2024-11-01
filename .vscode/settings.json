@@ -1,0 +1,71 @@
+{
+  "editor.fontSize": 14,
+  "editor.fontFamily": "Consolas, 'Dank Mono', 'Source Code Pro', 'Fira Code', Menlo, 'Inconsolata', 'Droid Sans Mono', 'DejaVu Sans Mono', 'Ubuntu Mono', 'Courier New', Courier, Monaco, monospace",
+  "editor.tabSize": 4,
+  "files.autoSave": "onWindowChange",
+  "explorer.confirmDelete": false,
+  "editor.rulers": [
+    80,
+    120,
+    240
+  ],
+  "code-runner.runInTerminal": true,
+  "code-runner.ignoreSelection": true,
+  "terminal.integrated.fontFamily": "",
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.autopep8",
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit",
+      "source.organizeImports": "explicit"
+    }
+  },
+  "python.languageServer": "Pylance",
+  "python.formatting.autopep8Args": [
+    "--indent-size=4",
+    "--max-line-length=80",
+    "--ignore=E111"
+  ],
+  "python.linting.flake8Args": [
+    "--ignore=E111"
+  ],
+  "python.linting.flake8Enabled": true,
+  "python.linting.enabled": true,
+  "python.linting.flake8Path": "/home/jcmarques/.ssh/Legado-Ivo-Pitz/venv/bin/flake8",
+  "python.formatting.provider": "autopep8",
+  "editor.formatOnSave": false,
+  "python.linting.mypyEnabled": true,
+  "python.analysis.diagnosticSeverityOverrides": {},
+  "python.analysis.typeCheckingMode": "basic",
+  "cSpell.enabled": false,
+  "workbench.iconTheme": "vscode-icons",
+  "explorer.compactFolders": false,
+  "git.enableSmartCommit": true,
+  "python.testing.unittestArgs": [
+    "-v",
+    "-s",
+    ".",
+    "-p",
+    "*test*.py"
+  ],
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestEnabled": true,
+  "python.testing.pytestArgs": [
+    "--maxfail=1",
+    "--disable-warnings"
+  ],
+  "workbench.editor.empty.hint": "hidden",
+  "git.autofetch": true,
+  "vim.useCtrlKeys": false,
+  "workbench.settings.applyToAllProfiles": [
+    "vim.useCtrlKeys"
+  ],
+  "flake8.path": [
+    "/home/jcmarques/.ssh/Legado-Ivo-Pitz/venv/bin/flake8"
+  ],
+  "liveServer.settings.donotShowInfoMsg": true,
+  "git.confirmSync": false,
+  "json.schemas": []
+}

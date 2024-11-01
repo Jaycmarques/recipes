@@ -1,0 +1,12 @@
+{% if messages %}
+<div class="container mt-4 messages-container"> <!-- Adicionando margem superior -->
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert"> <!-- Usando classes de alerta do Bootstrap -->
+            {{ message }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span> <!-- Ícone de fechar -->
+            </button>
+        </div>
+    {% endfor %}
+</div>
+{% endif %}

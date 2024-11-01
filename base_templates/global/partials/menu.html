@@ -1,0 +1,50 @@
+<!-- Botão para mostrar o menu -->
+<button class="btn btn-outline-primary button-show-menu" type="button" aria-expanded="false" aria-controls="menuContainer" onclick="toggleMenu()">
+  <i class="fas fa-bars"></i>
+  <span class="hidden-text">Show menu</span>
+</button>
+
+<!-- Contêiner do menu -->
+<div class="menu-container menu-hidden" id="menuContainer" style="display: none;">
+   <div class="menu-content">
+    <nav class="menu-nav">
+      <ul class="list-unstyled"> <!-- Usando uma lista não ordenada para o menu -->
+        <li>
+          <a class="nav-link" href="{% url 'recipes:home' %}">Home</a>
+        </li>
+
+        {% if user.is_authenticated %}
+          <li>
+            <a class="nav-link" href="{% url 'authors:dashboard_recipe_new' %}">New recipe</a>
+          </li>
+          <li>
+            <a class="nav-link" href="{% url 'authors:dashboard' %}">Dashboard</a>
+          </li>
+          <li>
+            <a class="nav-link authors-logout-link" href="{% url 'authors:logout' %}">Logout</a>
+            {% include 'authors/partials/form_logout.html' %}
+          </li>
+        {% else %}
+          <li>
+            <a class="nav-link" href="{% url 'authors:login' %}">Login</a>
+          </li>
+          <li>
+            <a class="nav-link" href="{% url 'authors:register' %}">Register</a>
+          </li>
+        {% endif %}
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<!-- Script para alternar a visibilidade do menu -->
+<script>
+  function toggleMenu() {
+    const menuContainer = document.getElementById('menuContainer');
+    if (menuContainer.style.display === 'none' || menuContainer.style.display === '') {
+      menuContainer.style.display = 'block';
+    } else {
+      menuContainer.style.display = 'none';
+    }
+  }
+</script>
